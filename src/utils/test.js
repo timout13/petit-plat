@@ -28,6 +28,5 @@ export function ajaxRequest(method, url, data = null, callback) {
     } else {
       xhr.send();
     }
-  console.log('test');
   }
 
