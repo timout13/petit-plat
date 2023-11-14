@@ -11,6 +11,7 @@ export default {
     extend: {
       colors: {
         warning: "#F8D36F",
+        grey: "#EDEDED",
       },
       backgroundImage: {
         "hero-pattern": "url('/imgs/hero_bg.png')",

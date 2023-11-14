@@ -7,6 +7,9 @@ window.customElements.define("index-page", IndexPage);
 import { SearchBar } from "./src/components/search-bar.js";
 window.customElements.define("search-bar", SearchBar);
 
+import { Select } from "./src/components/select.js";
+window.customElements.define("p-select", Select);
+
 document.querySelector("body").innerHTML = `
   <main class="h-full">
   </main>

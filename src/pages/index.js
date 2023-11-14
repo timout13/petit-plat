@@ -7,7 +7,7 @@ export class IndexPage extends HTMLElement {
   connectedCallback() {
     const template = document.createElement("template");
     template.innerHTML = `
-        <header class="py-[69px] px-[51px] h-[667px] bg-hero-pattern bg-contain bg-no-repeat">
+        <header class="py-[69px] px-[51px] bg-hero-pattern bg-cover bg-no-repeat">
             <img class="mb-[170px]" src="${logo}">
             <h1 class="text-[44px] mx-[275px] mb-[30px] text-warning text-center font-main">
                 CHERCHEZ PARMI PLUS DE 1500 RECETTES 
@@ -15,7 +15,14 @@ export class IndexPage extends HTMLElement {
             </h1>
             <search-bar class="relative h-[72px] block w-[954px] m-auto"></search-bar>
         </header>
-            <h1 class="text-3xl font-bold font-body underline">No World!</h1>
+        <section class="px-[104px] pt-[20px] bg-grey">
+          <div class="flex gap-[64px]">
+            <p-select></p-select>
+            <p-select></p-select>
+            <p-select></p-select>
+            <p class="font-main flex-1 text-end">15000 recettes</p>
+          </div>
+        </section>
           `;
     this.appendChild(template.content);
       ajaxRequest('GET', '/backEnd/data.json', null, (err, res) => {
