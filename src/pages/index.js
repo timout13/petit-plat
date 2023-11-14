@@ -15,12 +15,17 @@ export class IndexPage extends HTMLElement {
             </h1>
             <search-bar class="relative h-[72px] block w-[954px] m-auto"></search-bar>
         </header>
-        <section class="px-[104px] pt-[20px] bg-grey">
+        <section class="px-[104px] pt-[20px] bg-bg">
           <div class="flex gap-[64px]">
             <p-select></p-select>
             <p-select></p-select>
             <p-select></p-select>
             <p class="font-main flex-1 text-end">15000 recettes</p>
+          </div>
+          <div class="mt-[55px] flex gap-y-[66px] gap-x-[48px]">
+            <p-recipe></p-recipe>
+            <p-recipe></p-recipe>
+            <p-recipe></p-recipe>
           </div>
         </section>
           `;

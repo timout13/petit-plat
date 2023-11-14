@@ -11,6 +11,7 @@ export default {
     extend: {
       colors: {
         warning: "#F8D36F",
+        bg: "#EDEDED",
         grey: "#EDEDED",
       },
       backgroundImage: {
