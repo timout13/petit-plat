@@ -20,6 +20,7 @@ export default {
       },
       padding: {
         container: "69px",
+        btn: "69px",
       },
     },
   },

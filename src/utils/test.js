@@ -1,26 +1,23 @@
-export function ajaxRequest(method, url, data = null, callback) {
+export function ajaxRequest(method, url, data = null) {
+  return new Promise((resolve, reject) => {
     var xhr = new XMLHttpRequest();
-
     xhr.open(method, url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
 
     xhr.onload = function () {
       if (xhr.status >= 200 && xhr.status < 300) {
         var responseData = JSON.parse(xhr.responseText);
-        callback(null, responseData);
-      } else if (xhr.status == 404) {
+        resolve(responseData);
+      } else if (xhr.status === 404 || xhr.status === 500) {
         var responseData = JSON.parse(xhr.responseText);
-        callback(null, responseData);
-      } else if (xhr.status == 500) {
-        var responseData = JSON.parse(xhr.responseText);
-        callback(null, responseData);
+        reject(responseData);
       } else {
-        callback("Erreur lors de la requête: " + xhr.status, null);
+        reject("Erreur lors de la requête: " + xhr.status);
       }
     };
 
     xhr.onerror = function () {
-      callback("Erreur réseau", null);
+      reject("Erreur réseau");
     };
 
     if (method === "POST") {
@@ -28,5 +25,5 @@ export function ajaxRequest(method, url, data = null, callback) {
     } else {
       xhr.send();
     }
-  }
-
+  });
+}

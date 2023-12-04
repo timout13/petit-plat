@@ -6,6 +6,7 @@ export class IndexPage extends HTMLElement {
   }
   connectedCallback() {
     const template = document.createElement("template");
+    let test = { cle: "reponse", autre: 'reps' };
     template.innerHTML = `
         <header class="py-[69px] px-[51px] bg-hero-pattern bg-cover bg-no-repeat">
             <img class="mb-[170px]" src="${logo}">
@@ -23,7 +24,7 @@ export class IndexPage extends HTMLElement {
             <p class="font-main flex-1 text-end">15000 recettes</p>
           </div>
           <div class="mt-[55px] flex gap-y-[66px] gap-x-[48px]">
-            <p-recipe></p-recipe>
+            <p-recipe data-object='${JSON.stringify(test)}'></p-recipe>
             <p-recipe></p-recipe>
             <p-recipe></p-recipe>
           </div>

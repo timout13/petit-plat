@@ -10,6 +10,8 @@ window.customElements.define("search-bar", SearchBar);
 import { Select } from "./src/components/select.js";
 window.customElements.define("p-select", Select);
 
+import { search } from "./src/utils/search.js";
+search();
 import { Recipe } from "./src/components/recipe.js";
 window.customElements.define("p-recipe", Recipe);
 

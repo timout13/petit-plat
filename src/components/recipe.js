@@ -3,6 +3,8 @@ export class Recipe extends HTMLElement {
     super();
   }
   connectedCallback() {
+    const dataAttribute = this.getAttribute("data-object");
+const monObjet = JSON.parse(dataAttribute);
     const template = document.createElement("template");
     template.innerHTML = `
           <article class="rounded-[21px] relative bg-white h-[731px] w-[380px]">

@@ -37,3 +37,6 @@
 .icon-search:hover .icon-search-child{
   stroke: black;
 }
+select{
+  touch-action: none;
+}
